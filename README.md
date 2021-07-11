@@ -21,7 +21,7 @@ import "github.com/leaanthony/idgen"
 
 func main() {
 	
-	// Create a new generator
+    // Create a new generator
     generator := idgen.New()	
     
     // Get an ID
@@ -32,19 +32,19 @@ func main() {
     
     limited := generator.NewWithMaximum(1)
 
-	// Get the only ID available
-	id, err = limited.NewID()
+    // Get the only ID available
+    id, err = limited.NewID()
     // err == nil
     
-	// Get another when no more are available
-	_, err = limited.NewID()
-	// err != nil 
+    // Get another when no more are available
+    _, err = limited.NewID()
+    // err != nil 
 	
-	// Release the id we had
-	limited.ReleaseID(id)
-
-	// Now we can get the ID again
-	id, err = limited.NewID()
-	// err == nil
+    // Release the id we had
+    limited.ReleaseID(id)
+    
+    // Now we can get the ID again
+    id, err = limited.NewID()
+    // err == nil
 }
 ```
